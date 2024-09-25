@@ -7,6 +7,7 @@ const db = require ('../config/database');
 
 exports.createSala = async(req, res) => {
     const { nome, descricao }= req.body;
+    // eslint-disable-next-line no-unused-vars
     const { rows } = await db.query(
         "INSERT INTO sala (nome, descricao) VALUES ($1, $2)", 
         [nome, descricao]
@@ -35,6 +36,7 @@ exports.findSalaById = async(req, res) =>{
 exports.updateById = async(req, res) => {
     const salaId = parseInt(req.params.id);
     const { nome, descricao }= req.body;
+    // eslint-disable-next-line no-unused-vars
     const response = await db.query ( 'UPDATE sala SET nome = $1, descricao = $2 where id=$3', [nome, descricao, salaId] )
 
     res.status(200).send(
@@ -50,6 +52,7 @@ exports.updateById = async(req, res) => {
 exports.deleteById = async(req, res) => {
     const salaId = parseInt(req.params.id);
     const { nome, descricao }= req.body;
+    // eslint-disable-next-line no-unused-vars
     const response = await db.query('DELETE from sala WHERE id=$1', [salaId]);
     res.status(200).send({
         message: 'Sala deletada com sucesso',
