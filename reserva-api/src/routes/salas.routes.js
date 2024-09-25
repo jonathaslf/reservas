@@ -21,4 +21,9 @@ router.get('/salas/:id', salaController.findSalaById);
 
 router.put('/salas/:id', salaController.updateById);
 
+
+// => Rota responsavel por deletar sala pelo ID : (DELETE) : localhost:3000/api/salas/id
+
+router.delete('/salas/:id', salaController.deleteById);
+
 module.exports = router;

@@ -45,3 +45,16 @@ exports.updateById = async(req, res) => {
         },
     );
 };
+
+// => Metodo responsevel por listar a sala pelo ID
+exports.deleteById = async(req, res) => {
+    const salaId = parseInt(req.params.id);
+    const { nome, descricao }= req.body;
+    const response = await db.query('DELETE from sala WHERE id=$1', [salaId]);
+    res.status(200).send({
+        message: 'Sala deletada com sucesso',
+        body: {
+           sala: {nome, descricao} 
+        },
+    });
+};
