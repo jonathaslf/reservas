@@ -16,4 +16,9 @@ router.get('/salas', salaController.listAllSalas);
 // => Rota responsavel por listar a Sala pelo ID : (GET) : localhost:3000/api/salas/id
 router.get('/salas/:id', salaController.findSalaById);
 
+
+// => Rota responsavel por atualizar sala pelo ID : (PUT) : localhost:3000/api/salas/id
+
+router.put('/salas/:id', salaController.updateById);
+
 module.exports = router;

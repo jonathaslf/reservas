@@ -29,4 +29,19 @@ exports.findSalaById = async(req, res) =>{
     const salaId = parseInt(req.params.id);
     const response = await db.query ('SELECT * FROM sala WHERE id=$1', [salaId]);
     res.status(200).send(response.rows);
-}
+};
+
+// => Metodo responsevel por listar a sala pelo ID
+exports.updateById = async(req, res) => {
+    const salaId = parseInt(req.params.id);
+    const { nome, descricao }= req.body;
+    const response = await db.query ( 'UPDATE sala SET nome = $1, descricao = $2 where id=$3', [nome, descricao, salaId] )
+
+    res.status(200).send(
+        {message: 'Alteração realizada com sucesso',
+           body: {
+            sala: {nome, descricao}
+           } 
+        },
+    );
+};
