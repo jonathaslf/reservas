@@ -27,3 +27,6 @@ router.put('/salas/:id', salaController.updateById);
 router.delete('/salas/:id', salaController.deleteById);
 
 module.exports = router;
+
+
+///atualizar o angular para o 18
