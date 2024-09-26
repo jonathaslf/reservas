@@ -19,6 +19,8 @@
     "@angular/platform-browser-dynamic": "^18.2.6",
     "@angular/router": "^18.2.6",
     "@fortawesome/angular-fontawesome": "^0.15.0",
+    "@ngx-loading-bar/core": "^6.0.2",
+    "@ngx-loading-bar/router": "^6.0.2",
     "bootstrap": "^5.3.3",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.14.1",
